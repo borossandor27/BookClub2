@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34902.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClub", "BookClub\BookClub.csproj", "{97D99228-D4F2-4DC1-A5A2-4175BBA7EA8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookclub-desktop-cli", "Bookclub-desktop-cli\Bookclub-desktop-cli.csproj", "{08972231-5E9C-4188-80E2-17A4B8BBCCC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{97D99228-D4F2-4DC1-A5A2-4175BBA7EA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97D99228-D4F2-4DC1-A5A2-4175BBA7EA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97D99228-D4F2-4DC1-A5A2-4175BBA7EA8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08972231-5E9C-4188-80E2-17A4B8BBCCC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08972231-5E9C-4188-80E2-17A4B8BBCCC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08972231-5E9C-4188-80E2-17A4B8BBCCC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08972231-5E9C-4188-80E2-17A4B8BBCCC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
