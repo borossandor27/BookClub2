@@ -82,8 +82,8 @@ namespace BookClub
                 //rákérdezünk a felhasználótól, hogy tényleg kitiltja-e a kiválasztott tagot
                 if (banned)
                 {
-                   DialogResult valasztas= MessageBox.Show($"Visszavonja a kiválasztott {name} tag kitiltását?","Kitiltás",MessageBoxButtons.YesNo);
-                    if (DialogResult.Yes==valasztas )
+                    DialogResult valasztas = MessageBox.Show($"Visszavonja a kiválasztott {name} tag kitiltását?", "Kitiltás", MessageBoxButtons.YesNo);
+                    if (DialogResult.Yes == valasztas)
                     {
                         row.Cells["Banned"].Value = false;
                         // A módosítások mentése az adatbázisban
@@ -93,7 +93,7 @@ namespace BookClub
                 }
                 else
                 {
-                   DialogResult valasztas= MessageBox.Show($"Kitiltja a kiválasztott {name} tagot?", "Kitiltás visszavonása", MessageBoxButtons.YesNo);
+                    DialogResult valasztas = MessageBox.Show($"Kitiltja a kiválasztott {name} tagot?", "Kitiltás visszavonása", MessageBoxButtons.YesNo);
                     if (DialogResult.Yes == valasztas)
                     {
                         row.Cells["Banned"].Value = true;
