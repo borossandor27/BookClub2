@@ -24,7 +24,8 @@ namespace BookClub
 
         private void Form_Konyvklub_Load(object sender, EventArgs e)
         {
-            dataGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells); // Az oszlopok automatikus méretezése a Form szélességéhez
+            dataGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Mindig a teljes sor kijelölése
             Beolvasas();
             dataGV.DataSource = members;
             // Eseménykezelő hozzáadása
