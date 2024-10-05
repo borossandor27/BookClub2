@@ -33,6 +33,7 @@ namespace BookClub
         }
         private void Beolvasas()
         {
+            members.Clear();
             Console.WriteLine("Adatok beolvasása...");
             MySqlConnectionStringBuilder sb = new MySqlConnectionStringBuilder();
             sb.Server = "localhost";
@@ -68,6 +69,10 @@ namespace BookClub
         // Eseménykezelő függvény
         private void dataGV_CellClick(object sender, EventArgs e)
         {
+            if (dataGV.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Tiltás módosításához előbb" + Environment.NewLine + "válasszon ki klubtagot!");
+            }
             int RowIndex = dataGV.CurrentCell.RowIndex;
             // Ellenőrizzük, hogy nem a fejléc cellára kattintottak
             if (RowIndex >= 0)
@@ -81,9 +86,9 @@ namespace BookClub
                 bool banned = Convert.ToBoolean(row.Cells["Banned"].Value);
 
                 //rákérdezünk a felhasználótól, hogy tényleg kitiltja-e a kiválasztott tagot
-                if (banned)
+                if (!banned)
                 {
-                    DialogResult valasztas = MessageBox.Show($"Visszavonja a kiválasztott {name} tag kitiltását?", "Kitiltás", MessageBoxButtons.YesNo);
+                    DialogResult valasztas = MessageBox.Show($"Biztos szeretné kitiltani a kiválasztott {name} klubtagot?", "Kitiltás", MessageBoxButtons.YesNo);
                     if (DialogResult.Yes == valasztas)
                     {
                         row.Cells["Banned"].Value = false;
@@ -94,7 +99,7 @@ namespace BookClub
                 }
                 else
                 {
-                    DialogResult valasztas = MessageBox.Show($"Kitiltja a kiválasztott {name} tagot?", "Kitiltás visszavonása", MessageBoxButtons.YesNo);
+                    DialogResult valasztas = MessageBox.Show($"Biztos szeretné visszavonni a kiválasztott {name} klubtag tiltását?", "Kitiltás visszavonása", MessageBoxButtons.YesNo);
                     if (DialogResult.Yes == valasztas)
                     {
                         row.Cells["Banned"].Value = true;
@@ -113,10 +118,12 @@ namespace BookClub
                 connection.Open();
                 sql.ExecuteNonQuery();
                 connection.Close();
+                MessageBox.Show("A módosítások mentése sikeres!");
+                Beolvasas();
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Hiba a módosítás folyamán" + Environment.NewLine + ex.Message);
                 Environment.Exit(0);
             }
         }

@@ -35,12 +35,13 @@
             // 
             // buttonTiltas
             // 
-            this.buttonTiltas.Location = new System.Drawing.Point(51, 28);
+            this.buttonTiltas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonTiltas.Location = new System.Drawing.Point(54, 12);
             this.buttonTiltas.Name = "buttonTiltas";
-            this.buttonTiltas.Size = new System.Drawing.Size(219, 23);
+            this.buttonTiltas.Size = new System.Drawing.Size(222, 45);
             this.buttonTiltas.TabIndex = 0;
             this.buttonTiltas.Text = "Tiltás / Tiltás visszavonása";
-            this.buttonTiltas.UseVisualStyleBackColor = true;
+            this.buttonTiltas.UseVisualStyleBackColor = false;
             // 
             // dataGV
             // 
