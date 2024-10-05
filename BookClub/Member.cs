@@ -10,7 +10,7 @@ namespace BookClub
     {
         int id;
         string name;
-        enum gender { male, female, other };
+        Gender nem;
         DateTime birth_date;
         bool banned;
 
@@ -18,26 +18,47 @@ namespace BookClub
         {
             this.id = id;
             this.name = name;
+            this.nem = GetGender(nem);
             this.birth_date = birth_date;
             this.banned = banned;
-            this.GetGender(nem);
         }
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public DateTime Birth_date { get => birth_date; set => birth_date = value; }
         public bool Banned { get => banned; set => banned = value; }
-        gender GetGender(string input)
+        public string Nem { get => getGenderText(this.nem); }
+        Gender GetGender(string input)
         {
             switch (input)
             {
                 case "M":
-                    return gender.male;
+                    return Gender.male;
                 case "F":
-                    return gender.female;
-               default:
-                    return gender.other; // Ha más karaktereket kapsz vagy nem megfelelő karaktereket, akkor a nemet "other"-re állítja
+                    return Gender.female;
+                default:
+                    return Gender.other; // Ha más karaktereket kapsz vagy nem megfelelő karaktereket, akkor a nemet "other"-re állítja
             }
+        }
+        string getGenderText(Gender gender)
+        {
+            string description = "";
+            switch (gender)
+            {
+                case Gender.male:
+                    description = "Férfi";
+                    break;
+                case Gender.female:
+                    description = "Nő";
+                    break;
+                case Gender.other:
+                    description = "Ismeretlen";
+                    break;
+                default:
+                    description = "Ismeretlen"; // Ez a biztonság kedvéért.
+                    break;
+            }
+            return description;
         }
     }
 }

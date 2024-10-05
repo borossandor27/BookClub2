@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonTiltas = new System.Windows.Forms.Button();
             this.dataGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonTiltas
             // 
-            this.button1.Location = new System.Drawing.Point(51, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tiltás / Tiltás visszavonása";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonTiltas.Location = new System.Drawing.Point(51, 28);
+            this.buttonTiltas.Name = "buttonTiltas";
+            this.buttonTiltas.Size = new System.Drawing.Size(219, 23);
+            this.buttonTiltas.TabIndex = 0;
+            this.buttonTiltas.Text = "Tiltás / Tiltás visszavonása";
+            this.buttonTiltas.UseVisualStyleBackColor = true;
             // 
             // dataGV
             // 
             this.dataGV.AllowUserToAddRows = false;
             this.dataGV.AllowUserToDeleteRows = false;
+            this.dataGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGV.Location = new System.Drawing.Point(0, 76);
@@ -53,18 +54,19 @@
             this.dataGV.ReadOnly = true;
             this.dataGV.RowHeadersWidth = 51;
             this.dataGV.RowTemplate.Height = 24;
-            this.dataGV.Size = new System.Drawing.Size(800, 374);
+            this.dataGV.Size = new System.Drawing.Size(1116, 374);
             this.dataGV.TabIndex = 1;
             // 
             // Form_Konyvklub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1116, 450);
             this.Controls.Add(this.dataGV);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonTiltas);
             this.Name = "Form_Konyvklub";
             this.Text = "Konyvklub";
+            this.Load += new System.EventHandler(this.Form_Konyvklub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
             this.ResumeLayout(false);
 
@@ -72,7 +74,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonTiltas;
         private System.Windows.Forms.DataGridView dataGV;
     }
 }

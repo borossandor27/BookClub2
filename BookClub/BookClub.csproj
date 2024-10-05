@@ -78,6 +78,7 @@
     <Compile Include="Form_Konyvklub.Designer.cs">
       <DependentUpon>Form_Konyvklub.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gender.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
